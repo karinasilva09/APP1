@@ -32,7 +32,7 @@ export class PainelComponent implements OnInit {
     //console.log(this.resposta)
   }
 
-  public verificarRespostacls(): void{
+  public verificarResposta(): void{
     if(this.rodadaFrase.frasePtBr == this.resposta){
       this.rodada++
       this.rodadaFrase = this.frases[this.rodada]
