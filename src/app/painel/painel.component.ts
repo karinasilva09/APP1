@@ -40,7 +40,7 @@ export class PainelComponent implements OnInit {
       this.progresso = this.progresso + 100/(this.frases.length)
     }else{
       this.tentativas--
-
+      //Teste do git
       if(this.tentativas === -1){
         alert('Você perdeu todas as tentativas');
       }
