@@ -12,7 +12,7 @@ export class PainelComponent implements OnInit {
 
   public frases: Frase[] = FRASES
   public instrucao: string = 'Traduza esta frase'
-  public resposta: string
+  public resposta: string = ''
 
   public rodada: number = 0
   public rodadaFrase: Frase
@@ -20,7 +20,7 @@ export class PainelComponent implements OnInit {
   public progresso: number = 0
 
   constructor(){
-    this.rodadaFrase = this.frases[this.rodada]
+    this.atualizaRodada()
     console.log(this.rodadaFrase)
   }
 
@@ -35,12 +35,16 @@ export class PainelComponent implements OnInit {
   public verificarResposta(): void{
     if(this.rodadaFrase.frasePtBr == this.resposta){
       this.rodada++
-      this.rodadaFrase = this.frases[this.rodada]
+      this.atualizaRodada()
       this.progresso = this.progresso + 100/(this.frases.length)
       console.log(this.progresso)
     }else{
-      alert("Tradução incorreta")
+      
     }
-    
+  }
+
+  public atualizaRodada(): void{
+    this.rodadaFrase = this.frases[this.rodada]
+    this.resposta = ''
   }
 }
