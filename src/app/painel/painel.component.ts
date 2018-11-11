@@ -33,11 +33,16 @@ export class PainelComponent implements OnInit {
   }
 
   public verificarResposta(): void{
-    console.log(this.tentativas)
     if(this.rodadaFrase.frasePtBr == this.resposta){
       this.rodada++
-      this.atualizaRodada()
+
       this.progresso = this.progresso + 100/(this.frases.length)
+
+      if(this.rodada === 4){
+        alert("Concluiu com sucesso!");
+      }
+
+      this.atualizaRodada()
     }else{
       this.tentativas--
 
